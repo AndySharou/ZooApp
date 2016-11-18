@@ -3,4 +3,5 @@
     <string name="drawer_opened">Select an item</string>
     <string name="drawer_closed">Zoo</string>
     <string name="action_settings">Settings</string>
+    <string name="exhibits_feed">https://gist.githubusercontent.com/AndySharou/c2e7ca034962811fe65e0400670db80c/raw/c7f6dbbba5c640f7e250855178826400735fb334</string>
 </resources>
