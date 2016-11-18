@@ -1,11 +1,16 @@
 package com.example.andrew.zooapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
 
 import com.example.andrew.zooapp.R;
+import com.example.andrew.zooapp.activities.ExhibitDetailActivity;
+import com.example.andrew.zooapp.adapters.ExhibitsAdapter;
 import com.example.andrew.zooapp.models.Animal;
 import com.example.andrew.zooapp.utils.AnimalApiInterface;
 
@@ -22,6 +27,8 @@ import retrofit.client.Response;
 
 public class ExhibitsListFragment extends ListFragment{
 
+    private ExhibitsAdapter mAdapter;
+
     public static ExhibitsListFragment getInstance() {
 
        ExhibitsListFragment fragment = new ExhibitsListFragment();
@@ -31,6 +38,9 @@ public class ExhibitsListFragment extends ListFragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        setListShown( false );
+        mAdapter = new ExhibitsAdapter( getActivity(), 0 );
+
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint( getString(R.string.exhibits_feed))
                 .build();
@@ -46,8 +56,13 @@ public class ExhibitsListFragment extends ListFragment{
 
                 for (Animal animal:animals) {
 
-                    Log.e("Zoo", animal.getName());
+                    //Log.e("Zoo", animal.getName());
+                    mAdapter.add( animal );
                 }
+
+                mAdapter.notifyDataSetChanged();
+                setListAdapter( mAdapter );
+                setListShown( true );
 
             }
 
@@ -56,5 +71,13 @@ public class ExhibitsListFragment extends ListFragment{
                 Log.e("Zoo", "Retrofit error " + error.getMessage());
             }
         });
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Intent intent = new Intent( getActivity(), ExhibitDetailActivity.class );
+        intent.putExtra( ExhibitDetailActivity.EXTRA_ANIMAL, mAdapter.getItem( position ) );
+        startActivity( intent );
     }
 }
