@@ -29,8 +29,6 @@ public class ExhibitDetailActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
         Animal animal = getIntent().getExtras().getParcelable( EXTRA_ANIMAL );
 
         species = (TextView)findViewById(R.id.species);
