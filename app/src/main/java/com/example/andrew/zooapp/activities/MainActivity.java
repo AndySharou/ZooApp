@@ -16,6 +16,7 @@ import com.example.andrew.zooapp.R;
 import com.example.andrew.zooapp.events.DrawerSectionItemClickedEvent;
 import com.example.andrew.zooapp.fragments.ExhibitsListFragment;
 import com.example.andrew.zooapp.fragments.GalleryFragment;
+import com.example.andrew.zooapp.fragments.MammalsListFragment;
 import com.example.andrew.zooapp.fragments.ZooMapFragment;
 import com.example.andrew.zooapp.utils.EventBus;
 import com.squareup.otto.Subscribe;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private void displayInitialFragment() {
 
         getSupportFragmentManager().beginTransaction().replace( R.id.container, ExhibitsListFragment.getInstance() ).commit();
-        mCurrentFragmentTitle = getString(R.string.section_exhibits);
+        mCurrentFragmentTitle = getString(R.string.section_mammals);
     }
 
     @Override
@@ -137,6 +138,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (event.section.equalsIgnoreCase( getString( R.string.section_exhibits )  )) {
 
             getSupportFragmentManager().beginTransaction().replace( R.id.container, ExhibitsListFragment.getInstance() ).commit();
+        } else  if (event.section.equalsIgnoreCase( getString( R.string.section_mammals ) )) {
+            getSupportFragmentManager().beginTransaction().replace( R.id.container, MammalsListFragment.getInstance() ).commit();
+
         } else {
 
             return;

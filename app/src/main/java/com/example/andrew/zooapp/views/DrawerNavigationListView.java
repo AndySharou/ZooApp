@@ -32,6 +32,7 @@ public class DrawerNavigationListView extends ListView implements AdapterView.On
         adapter.add( "Gallery" );
         adapter.add( "Maps" );*/
         adapter.add( getContext().getString( R.string.section_exhibits));
+        adapter.add( getContext().getString( R.string.section_mammals));
         adapter.add( getContext().getString( R.string.section_gallery));
         adapter.add( getContext().getString( R.string.section_map));
 
