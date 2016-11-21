@@ -73,7 +73,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemClick
         galleryApiInterface.getStreams(new Callback<List<GalleryImage>>() {
             @Override
             public void success(List<GalleryImage> galleryImages, Response response) {
-                if (galleryImages == null || galleryImages.isEmpty() )
+                if (galleryImages == null || galleryImages.isEmpty() || !isAdded() )
                     return;
                 for ( GalleryImage image: galleryImages ){
 

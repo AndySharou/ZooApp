@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.andrew.zooapp.R;
 import com.example.andrew.zooapp.adapters.DrawerNavigationListAdapter;
 import com.example.andrew.zooapp.events.DrawerSectionItemClickedEvent;
 import com.example.andrew.zooapp.utils.EventBus;
@@ -27,9 +28,12 @@ public class DrawerNavigationListView extends ListView implements AdapterView.On
         super(context, attrs, defStyleAttr);
 
         DrawerNavigationListAdapter adapter = new DrawerNavigationListAdapter( getContext(), 0 );
-        adapter.add( "Exhibits" );
+        /*adapter.add( "Exhibits" );
         adapter.add( "Gallery" );
-        adapter.add( "Maps" );
+        adapter.add( "Maps" );*/
+        adapter.add( getContext().getString( R.string.section_exhibits));
+        adapter.add( getContext().getString( R.string.section_gallery));
+        adapter.add( getContext().getString( R.string.section_map));
 
         setAdapter( adapter );
 
