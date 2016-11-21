@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.andrew.zooapp.R;
 import com.example.andrew.zooapp.events.DrawerSectionItemClickedEvent;
+import com.example.andrew.zooapp.fragments.BirdsListFragment;
 import com.example.andrew.zooapp.fragments.ExhibitsListFragment;
 import com.example.andrew.zooapp.fragments.GalleryFragment;
 import com.example.andrew.zooapp.fragments.MammalsListFragment;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayInitialFragment() {
 
-        getSupportFragmentManager().beginTransaction().replace( R.id.container, ExhibitsListFragment.getInstance() ).commit();
+        getSupportFragmentManager().beginTransaction().replace( R.id.container, MammalsListFragment.getInstance() ).commit();
         mCurrentFragmentTitle = getString(R.string.section_mammals);
     }
 
@@ -141,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
         } else  if (event.section.equalsIgnoreCase( getString( R.string.section_mammals ) )) {
             getSupportFragmentManager().beginTransaction().replace( R.id.container, MammalsListFragment.getInstance() ).commit();
 
+        } else if (event.section.equalsIgnoreCase( getString( R.string.section_birds )  )) {
+
+            getSupportFragmentManager().beginTransaction().replace( R.id.container, BirdsListFragment.getInstance() ).commit();
         } else {
 
             return;
