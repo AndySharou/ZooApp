@@ -40,10 +40,10 @@ public class ExhibitDetailActivity extends AppCompatActivity{
 
         getSupportActionBar().setTitle( animal.getName() );
 
-        species.setText ( animal.getSpecies() );
-        bclass.setText ( animal.getBclass() );
-        order.setText ( animal.getOrder() );
-        family.setText ( animal.getFamily() );
+        species.setText ( getString(R.string.species) + animal.getSpecies() );
+        bclass.setText ( getString(R.string.bclass) + animal.getBclass() );
+        order.setText ( getString(R.string.order)+ animal.getOrder() );
+        family.setText ( getString(R.string.family) + animal.getFamily() );
         description.setText( animal.getDescription() );
         Picasso.with( this ).load( animal.getImage() ).into( image );
     }
