@@ -77,7 +77,7 @@ public class GalleryFragment extends Fragment implements AdapterView.OnItemClick
                     return;
                 for ( GalleryImage image: galleryImages ){
 
-                    Log.e("ZooApp", image.getThumbnail() );
+                    //Log.e("ZooApp", image.getThumbnail() );
                     mAdapter.add( image );
                 }
                 mAdapter.notifyDataSetChanged();

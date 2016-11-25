@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.andrew.zooapp.R;
 import com.example.andrew.zooapp.events.DrawerSectionItemClickedEvent;
@@ -18,6 +17,7 @@ import com.example.andrew.zooapp.fragments.BirdsListFragment;
 import com.example.andrew.zooapp.fragments.ExhibitsListFragment;
 import com.example.andrew.zooapp.fragments.GalleryFragment;
 import com.example.andrew.zooapp.fragments.MammalsListFragment;
+import com.example.andrew.zooapp.fragments.VisitorInformationFragment;
 import com.example.andrew.zooapp.fragments.ZooMapFragment;
 import com.example.andrew.zooapp.utils.EventBus;
 import com.squareup.otto.Subscribe;
@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayInitialFragment() {
 
-        getSupportFragmentManager().beginTransaction().replace( R.id.container, MammalsListFragment.getInstance() ).commit();
-        mCurrentFragmentTitle = getString(R.string.section_mammals);
+        getSupportFragmentManager().beginTransaction().replace( R.id.container, VisitorInformationFragment.getInstance() ).commit();
+        mCurrentFragmentTitle = getString(R.string.section_visitors);
     }
 
     @Override
@@ -128,18 +128,26 @@ public class MainActivity extends AppCompatActivity {
 
             return;
         }
-        Toast.makeText( this, "MainActivity: Section clicked: " + event.section, Toast.LENGTH_SHORT ).show();
+        //Toast.makeText( this, "MainActivity: Section clicked: " + event.section, Toast.LENGTH_SHORT ).show();
 
-        if (event.section.equalsIgnoreCase( getString( R.string.section_map ) ) ) {
+        if (event.section.equalsIgnoreCase( getString( R.string.section_visitors ) ) ) {
+
+            getSupportFragmentManager().beginTransaction().replace( R.id.container, VisitorInformationFragment.getInstance() ).commit();
+
+        } else if (event.section.equalsIgnoreCase( getString( R.string.section_map ) ) ) {
 
             getSupportFragmentManager().beginTransaction().replace( R.id.container, ZooMapFragment.getInstance() ).commit();
+
         } else if (event.section.equalsIgnoreCase( getString( R.string.section_gallery )  )) {
 
             getSupportFragmentManager().beginTransaction().replace( R.id.container, GalleryFragment.getInstance() ).commit();
+
         } else if (event.section.equalsIgnoreCase( getString( R.string.section_exhibits )  )) {
 
             getSupportFragmentManager().beginTransaction().replace( R.id.container, ExhibitsListFragment.getInstance() ).commit();
+
         } else  if (event.section.equalsIgnoreCase( getString( R.string.section_mammals ) )) {
+
             getSupportFragmentManager().beginTransaction().replace( R.id.container, MammalsListFragment.getInstance() ).commit();
 
         } else if (event.section.equalsIgnoreCase( getString( R.string.section_birds )  )) {

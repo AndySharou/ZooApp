@@ -47,6 +47,7 @@ public class MammalsListFragment extends ListFragment {
         getListView().setDividerHeight( 16 );
         getListView().setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
         getListView().setClipToPadding( true );
+
         mAdapter = new ExhibitsAdapter( getActivity(), 0 );
 
         RestAdapter restAdapter = new RestAdapter.Builder()
