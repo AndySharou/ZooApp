@@ -3,14 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.andrew.zooapp.fragments.tabs.AddressTabFragment">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"/>
 
     <TextView
+        android:id="@+id/ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/address_tab"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:layout_below="@+id/tabs"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="10dp" />
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="@string/address_adress"
+        android:layout_below="@+id/ad"
+
+        android:padding="10dp" />
+
+    <TextView
+            android:id="@+id/how_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="@string/address_how_to"
+        android:layout_below="@+id/address"
+        android:padding="10dp" />
+
 
 </RelativeLayout>

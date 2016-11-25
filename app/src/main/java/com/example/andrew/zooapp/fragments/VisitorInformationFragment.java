@@ -120,7 +120,6 @@ public class VisitorInformationFragment extends Fragment {
     }
 
    /* private void displayInitialFragment() {
-
         getFragmentManager().beginTransaction().replace( R.id.container, WorkingHoursTabFragment.getInstance() ).commit();
         mCurrentFragmentTitle = getString(R.string.section_visitors);
     }*/

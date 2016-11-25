@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.andrew.zooapp.fragments.tabs.WorkingHoursTabFragment">
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="205dp"
+        android:src="@drawable/zoo_1"
+        android:scaleType="fitEnd" />
+
+
+
+        <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabMode="scrollable"
-        app:tabGravity="fill"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/tabs"
         android:fillViewport="true">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,11 +41,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="16dp"
+                android:text="@string/working_hours_days"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Режимм работы касс:"
+                android:text="Режим работы касс:"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_centerInParent="true"/>
@@ -50,7 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="16dp"
+                android:text="@string/working_hours_time"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,20 +69,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="16dp"
+                android:text="@string/working_hours_cass_time"/>
             <TextView
                 android:id="@+id/tech_break"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="16dp"
+                android:text="@string/working_hours_tech_break"/>
             <TextView
                 android:id="@+id/exposition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="16dp"/>
+                android:textSize="16dp"
+                android:text="@string/working_hours_exposition"/>
 
-        </LinearLayout>
+            </LinearLayout>
     </ScrollView>
-</RelativeLayout>
+
+</LinearLayout>

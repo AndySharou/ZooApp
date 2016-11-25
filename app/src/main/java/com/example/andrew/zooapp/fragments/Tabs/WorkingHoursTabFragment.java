@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.andrew.zooapp.R;
 import com.example.andrew.zooapp.models.WorkingHours;
+import com.example.andrew.zooapp.utils.EventBus;
 import com.example.andrew.zooapp.utils.WorkingHoursApiInterface;
 
 import retrofit.Callback;
@@ -27,6 +28,10 @@ public class WorkingHoursTabFragment extends Fragment {
 
     TextView days, time, cass_time, tech_break, exposition;
     ImageView image;
+
+    public WorkingHoursTabFragment() {
+        // Required empty public constructor
+    }
 
     public static WorkingHoursTabFragment getInstance() {
         // Required empty public constructor
@@ -54,6 +59,13 @@ public class WorkingHoursTabFragment extends Fragment {
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint( getString(R.string.working_hours_feed))
@@ -89,13 +101,19 @@ public class WorkingHoursTabFragment extends Fragment {
 
             }
         });
+
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onStart() {
+        super.onStart();
 
+        EventBus.getInstance().register( this );
+    }
 
-
+    @Override
+    public void onStop() {
+        EventBus.getInstance().unregister( this );
+        super.onStop();
     }
 }
