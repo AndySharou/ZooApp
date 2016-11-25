@@ -8,6 +8,7 @@
     <string name="mammals_feed">https://raw.githubusercontent.com/AndySharou/ZooApp/master/data</string>
     <string name="gallery_feed">https://raw.githubusercontent.com/AndySharou/ZooApp/master/data</string>
     <string name="map_pins_feed">https://raw.githubusercontent.com/AndySharou/ZooApp/master/data</string>
+    <string name="working_hours_feed">https://raw.githubusercontent.com/AndySharou/ZooApp/master/data</string>
     <string name="title_activity_maps">Карта</string>
     <string name="section_exhibits">Exhibits</string>
     <string name="section_mammals">Млекопитающие</string>

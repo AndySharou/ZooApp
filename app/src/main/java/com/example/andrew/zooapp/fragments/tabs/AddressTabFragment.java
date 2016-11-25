@@ -14,9 +14,10 @@ import com.example.andrew.zooapp.R;
 
 public class AddressTabFragment extends Fragment {
 
-    public AddressTabFragment() {
+    public static AddressTabFragment getInstance() {
         // Required empty public constructor
-
+        AddressTabFragment fragment = new  AddressTabFragment();
+        return fragment;
     }
 
     @Override
