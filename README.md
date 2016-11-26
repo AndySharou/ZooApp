@@ -1,5 +1,6 @@
 # ZooApp
 Minsk Zoo App
+
 Online guide to Minsk Zoo
 
 JSON, 
@@ -8,7 +9,8 @@ Fragments,
 GoogleMaps, 
 Navigation Drawer,
 Otto.Bus, 
-Picassoetc).
+Picasso,
+etc.
     
 App built using Gradle in Android Studio
 otto:1.3.8'
