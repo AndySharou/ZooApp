@@ -12,10 +12,10 @@ Otto.Bus,
 Picasso,
 etc.
     
-App built using Gradle in Android Studio
-otto:1.3.8'
-retrofit:1.9.0'
-picasso:2.5.2'
+App built using Gradle in Android Studio.
+otto:1.3.8',
+retrofit:1.9.0',
+picasso:2.5.2',
 
 
 ![alt tag] (https://github.com/AndySharou/ZooApp/blob/master/images/Readme/ZooAppReadmeImage_1.jpg)
